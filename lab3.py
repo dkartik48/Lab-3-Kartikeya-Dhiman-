@@ -11,19 +11,17 @@ x=int(input("What do you wish to do? : "))
 while(x!=6):
     if x==1:
         y=int(input("How many items u want to Add to your CART: "))
-        if y<=6:
-            total=0
-            while(y>0):
-                i=(input("Please Enter Product Name & Brand: "))
-                j=int(input("Please Enter its Price: "))
-                cart.update({i:j})
-                total=total+j
-                y=y-1
-            print("Your Cart contains the following items:")
-            print(cart)
+        total=0
+        for y in range(0,5):
+            i=(input("Please Enter Product Name & Brand: "))
+            j=int(input("Please Enter its Price: "))
+            cart.update({i:j})
+            total=total+j
+            y=y-1
+        print("Your Cart contains the following items:")
+        print(cart)
                 
-        else:
-            print("Sorry your cart is full.")
+        print("Sorry your cart is full.")
     elif x==2:
         z=str(input("Which product do you want to search? : "))
         if z in cart:
